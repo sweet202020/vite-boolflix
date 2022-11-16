@@ -1,16 +1,23 @@
+
+
 <script>
 
+import AppHeader from './components/AppHeader.vue';
 import { store } from './store.js'
 export default {
-  name: 'App',
+  name: "App",
+  components: {
+    AppHeader
+  },
   data() {
     return {
       store
-    }
+    };
   },
   mounted() {
-    this.store.callAPI()
-  }
+    this.store.callAPI();
+  },
+  components: { AppHeader }
 }
 
 
@@ -19,7 +26,14 @@ export default {
 </script>
 
 <template>
-  <h1 class="text-center">it works</h1>
+
+  <AppHeader />
+
+  <!-- /#site_header -->
+  <main id="site_main"></main>
+  <!-- /#site_main -->
+  <footer id="site_footer"></footer>
+  <!-- /#site_footer -->
 </template>
 
 <style lang="scss" scoped>

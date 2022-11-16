@@ -7,8 +7,9 @@ export const store = reactive({
     API_URL: 'https://api.themoviedb.org/3/search/movie?',
     params: {
         api_key: '1320ddff3038649a593a262b9429c7d3',
-        query: 'Matrix'
+        query: "",
     },
+    error: "",
     callAPI() {
         const config = {
             method: 'get',
