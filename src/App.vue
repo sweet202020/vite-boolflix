@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios'
+
 import { store } from './store.js'
 export default {
   name: 'App',
@@ -9,26 +9,10 @@ export default {
     }
   },
   mounted() {
-
-    const config = {
-      method: 'get',
-      url: store.API_URL,
-      params: {
-        api_key: store.params.api_key,
-        query: store.params.query
-      }
-    };
-
-    axios(config)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
+    this.store.callAPI()
   }
 }
+
 
 
 
