@@ -17,7 +17,6 @@ export default {
   mounted() {
     this.store.callAPI();
   },
-  components: { AppHeader }
 }
 
 

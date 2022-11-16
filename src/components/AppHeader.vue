@@ -30,5 +30,8 @@ export default {
         <span>boolflix</span>
         <input placeholder="cerca un film" v-model="store.params.query" type="text">
         <button @click="buttonSearch">search</button>
+        <ul v-for="film in store.movie">
+            <li>{{ film.title }}</li>
+        </ul>
     </header>
 </template>
