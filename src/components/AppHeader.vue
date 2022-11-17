@@ -12,8 +12,13 @@ film trovato:
 <script>
 
 import { store } from '../store.js'
+import SearchBox from './SearchBox.vue';
+
 export default {
     name: 'AppHeader',
+    components: {
+        SearchBox
+    },
     data() {
         return {
             store,
@@ -26,9 +31,7 @@ export default {
 </script>
 <template>
     <header id="site_header">
-        <span>boolflix</span>
-        <input placeholder="cerca un film" v-model="store.params.query" type="text">
-        <button @click="store.callAPI">search</button>
+        <SearchBox />
         <ul v-for="film in store.movies">
             <li>titolo: {{ film.title }}</li>
             <li>titolo originale: {{ film.original_title }}</li>
