@@ -39,7 +39,7 @@ export default {
   </main>
   <!-- /#site_main -->
   <footer id="site_footer"></footer>
-  <font-awesome-icon icon="fa-solid fa-star" />
+
   <!-- /#site_footer -->
 </template>
 

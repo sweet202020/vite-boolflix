@@ -32,33 +32,33 @@ piene (o mezze vuote :P) -->
 
 <script>
 import { store } from '../store.js'
-import FlagList from './FlagList.vue';
+
+import FilmData from './FilmData.vue';
 
 
 export default {
     name: "AppMain",
+    components: { FilmData },
     data() {
         return {
             store,
 
         };
     },
-    components: { FlagList }
 }
 </script>
 
 <template>
 
     <ul v-for="film in store.movies">
-        <li>titolo: {{ film.title }} {{ film.name }}</li>
-        <li>titolo originale: {{ film.original_title }} {{ film.original_name }}</li>
-        <FlagList :original_language="film.original_language" />
-        <li>voto: {{ Math.ceil(film.vote_average / 2) }}</li>
-        <li><img :src="store.imagePath + film.poster_path" alt=""></li>
+        <FilmData :film="film" />
     </ul>
 </template>
 
 
 <style lang="scss" scoped>
+.active {
 
+    color: gold;
+}
 </style>
