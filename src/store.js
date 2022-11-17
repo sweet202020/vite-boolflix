@@ -6,6 +6,7 @@ import { reactive } from 'vue'
 export const store = reactive({
     movies: [],
     tvSeries: [],
+    imagePath: 'https://image.tmdb.org/t/p/w342/',
     API_URL: 'https://api.themoviedb.org/3/search/movie?',
     API_URL_tv: 'https://api.themoviedb.org/3/search/tv?',
     params: {
