@@ -14,9 +14,7 @@ export default {
       store
     };
   },
-  mounted() {
-    this.store.callAPI();
-  },
+
 }
 
 

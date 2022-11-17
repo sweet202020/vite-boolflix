@@ -4,30 +4,25 @@ precedenti. */
 import axios from 'axios'
 import { reactive } from 'vue'
 export const store = reactive({
-    movie: [],
-    API_URL: 'https://api.themoviedb.org/3/search/movie?',
+    movies: [],
+    API_URL: 'https://api.themoviedb.org/3/search/movie',
     params: {
         api_key: '1320ddff3038649a593a262b9429c7d3',
-        query: "Matrix",
+        query: "",
     },
     error: "",
     callAPI() {
-        const config = {
-            method: 'get',
-            url: this.API_URL,
-            params: {
-                api_key: this.params.api_key,
-                query: this.params.query
-            }
-        };
-        axios(config)
+        axios.get('https://api.themoviedb.org/3/search/movie?api_key=1320ddff3038649a593a262b9429c7d3&query=' + store.params.query)
             .then(function (response) {
                 console.log(response.data.results);
+                store.movies = response.data.results
+                store.params.query = ""
 
-                this.movie = response.data.results
             })
             .catch(function (error) {
-                console.error(error);
+                console.error(error.message);
             });
     }
+
 })
+

@@ -10,28 +10,30 @@ film trovato:
 4. Voto -->
 
 <script>
+
 import { store } from '../store.js'
 export default {
     name: 'AppHeader',
     data() {
         return {
-            store
+            store,
+        }
+    },
 
-        }
-    }, methods: {
-        buttonSearch() {
-            console.log(store.params.query);
-        }
-    }
 }
+
+
 </script>
 <template>
     <header id="site_header">
         <span>boolflix</span>
         <input placeholder="cerca un film" v-model="store.params.query" type="text">
-        <button @click="buttonSearch">search</button>
-        <ul v-for="film in store.movie">
-            <li>{{ film.title }}</li>
+        <button @click="store.callAPI">search</button>
+        <ul v-for="film in store.movies">
+            <li>titolo: {{ film.title }}</li>
+            <li>titolo originale: {{ film.original_title }}</li>
+            <li>lingua originale: {{ film.original_language }}</li>
+            <li>voto: {{ film.vote_average }}</li>
         </ul>
     </header>
 </template>
