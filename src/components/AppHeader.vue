@@ -32,11 +32,6 @@ export default {
 <template>
     <header id="site_header">
         <SearchBox />
-        <ul v-for="film in store.movies">
-            <li>titolo: {{ film.title }}</li>
-            <li>titolo originale: {{ film.original_title }}</li>
-            <li>lingua originale: {{ film.original_language }}</li>
-            <li>voto: {{ film.vote_average }}</li>
-        </ul>
+
     </header>
 </template>

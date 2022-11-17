@@ -12,7 +12,7 @@ export default {
 </script>
 <template>
     <span>boolflix</span>
-    <input placeholder="cerca un film" v-model="store.params.query" type="text">
+    <input placeholder="cerca un film" @keyup.enter="store.callAPI" v-model="store.params.query" type="text">
     <button @click="store.callAPI">search</button>
 
 </template>
