@@ -5,6 +5,11 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import { store } from './store.js'
+
+
+
+
+
 export default {
   name: "App",
   components: {
@@ -34,6 +39,7 @@ export default {
   </main>
   <!-- /#site_main -->
   <footer id="site_footer"></footer>
+  <font-awesome-icon icon="fa-solid fa-star" />
   <!-- /#site_footer -->
 </template>
 
