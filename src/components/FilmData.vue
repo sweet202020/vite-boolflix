@@ -60,9 +60,11 @@ ul {
     list-style: none;
     display: none;
     position: absolute;
-
+    max-height: 400px;
+    overflow-y: auto;
     top: 15%;
     left: 0;
+    padding: 0 1rem;
 
 
     &:hover {
@@ -80,11 +82,7 @@ li {
 }
 
 
-.col:hover {
+.col:hover img {
     opacity: 0.2;
-}
-
-.col:hover ul {
-    opacity: 1;
 }
 </style>
