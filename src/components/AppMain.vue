@@ -49,10 +49,12 @@ export default {
 </script>
 
 <template>
+    <div class="container">
+        <div class="row row-cols-5 mt-5">
+            <FilmData v-for="film in store.movies" :film="film" />
 
-    <ul v-for="film in store.movies">
-        <FilmData :film="film" />
-    </ul>
+        </div>
+    </div>
 </template>
 
 

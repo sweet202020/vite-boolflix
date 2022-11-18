@@ -21,18 +21,70 @@ export default {
 </script>
 
 <template>
-    <li>titolo: {{ film.title }} {{ film.name }}</li>
-    <li>titolo originale: {{ film.original_title }} {{ film.original_name }}</li>
-    <FlagList :original_language="film.original_language" />
-    <li>voto: {{ vote }}</li>
-    <li>
-        <i class="fa-star" v-for="star in 5" :class="star <= vote ? 'fa-solid' : 'fa-regular'"></i>
-    </li>
-    <li><img :src="store.imagePath + film.poster_path" alt=""></li>
+
+    <div class="col">
+        <img class="poster" :src="store.imagePath + film.poster_path" alt="">
+        <ul>
+            <li>TITOLO: {{ film.title }} {{ film.name }}</li>
+            <li>TITOLO ORIGINALE: {{ film.original_title }} {{ film.original_name }}</li>
+            <FlagList :original_language="film.original_language" />
+            <li>
+                <i class="fa-star" v-for="star in 5" :class="star <= vote ? 'fa-solid' : 'fa-regular'"></i>
+            </li>
+            <li>TRAMA: {{ film.overview }}</li>
+        </ul>
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
 i.fa-solid {
     color: gold;
+}
+
+img {
+    height: 500px;
+    object-fit: contain;
+    max-width: 100%;
+    background-color: black;
+    margin: 1rem 0;
+}
+
+.col {
+    position: relative;
+
+}
+
+
+ul {
+    list-style: none;
+    display: none;
+    position: absolute;
+
+    top: 15%;
+    left: 0;
+
+
+    &:hover {
+        display: block;
+
+    }
+}
+
+li {
+    color: white;
+}
+
+.col:hover ul {
+    display: block;
+}
+
+
+.col:hover {
+    opacity: 0.2;
+}
+
+.col:hover ul {
+    opacity: 1;
 }
 </style>

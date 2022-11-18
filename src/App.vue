@@ -4,7 +4,7 @@
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import { store } from './store.js'
+
 
 
 
@@ -15,11 +15,6 @@ export default {
   components: {
     AppHeader,
     AppMain
-  },
-  data() {
-    return {
-      store
-    };
   },
 
 }
@@ -43,6 +38,8 @@ export default {
   <!-- /#site_footer -->
 </template>
 
-<style lang="scss" scoped>
-
+<style lang="scss" >
+body {
+  background-color: rgb(38, 37, 37);
+}
 </style>

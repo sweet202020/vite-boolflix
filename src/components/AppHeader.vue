@@ -10,28 +10,20 @@ film trovato:
 4. Voto -->
 
 <script>
-
-import { store } from '../store.js'
-import SearchBox from './SearchBox.vue';
+import NavBar from './NavBar.vue';
 
 export default {
     name: 'AppHeader',
     components: {
-        SearchBox
+        NavBar
     },
-    data() {
-        return {
-            store,
-        }
-    },
-
 }
 
 
 </script>
 <template>
     <header id="site_header">
-        <SearchBox />
+        <NavBar />
 
     </header>
 </template>
