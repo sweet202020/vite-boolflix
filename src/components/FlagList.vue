@@ -3,33 +3,32 @@ export default {
     name: 'FlagList',
     props: {
         original_language: String
+    }, data() {
+        return {
+            flags: ["it", "en", "es", "de", "fr"]
+        }
+    }, methods: {
+        flagList(lang) {
+            return new URL(`../assets/img/${lang}.png`, import.meta.url).href
+        },
+        isFlag(lang) {
+            if (this.flags.includes(lang)) {
+                return true
+            } else {
+                return false
+            }
+        }
     }
+
 }
 </script>
 
 <template>
-    <li v-if="original_language === 'en'">
-        LINGUA ORIGINALE: {{ original_language }}
-        <img src="../assets/img/bandiera-inglese-png-6.png" alt="">
-
+    <li v-if="isFlag(original_language)">
+        <span>LINGUA ORIGINALE: {{ original_language }}</span>
+        <img :src="flagList(original_language)" alt="">
     </li>
-    <li v-else-if="original_language === 'it'">
-        LINGUA ORIGINALE: {{ original_language }}
-        <img src="../assets/img/1200px-Bandiera_italiana_foto.svg.png" alt="">
-    </li>
-    <li v-else-if="original_language === 'de'">
-        LINGUA ORIGINALE: {{ original_language }}
-        <img src="../assets/img/Flag_of_Germany.svg.png" alt="">
-    </li>
-    <li v-else-if="original_language === 'es'">
-        LINGUA ORIGINALE: {{ original_language }}
-        <img src="../assets/img/1280px-Flag_of_Spain.svg.png" alt="">
-    </li>
-    <li v-else-if="original_language === 'fr'">
-        LINGUA ORIGINALE: {{ original_language }}
-        <img src="../assets/img/Flag_of_France_(1794–1815,_1830–1974,_2020–present).svg.png" alt="">
-    </li>
-    <li v-else>LINGUA ORIGINALE: {{ original_language }}</li>
+    <li v-else>{{ original_language }}</li>
 </template>
 
 
